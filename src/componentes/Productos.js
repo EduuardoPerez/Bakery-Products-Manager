@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Producto from './Producto';
 
 // Redux
 import { connect } from 'react-redux';
@@ -10,10 +11,24 @@ class Productos extends Component {
     this.props.mostrarProductos();
   }
   
-
   render() {
+    const { productos } = this.props;
     return (
-      <h1>Productos</h1>
+      <React.Fragment>
+        <h2 className="text-center my-5">Listado de Productos</h2>
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            <ul>
+              { productos.map( producto => (
+                <Producto
+                  key={producto.id}
+                  info={producto}
+                />
+              ))}
+            </ul>
+          </div>
+        </div>
+      </React.Fragment>
     )
   }
 }
