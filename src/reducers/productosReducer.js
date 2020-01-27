@@ -14,5 +14,6 @@ export default function (state=initialState, action) {
         productos: action.payload
       }
     default:
+      return state;
   }
 }
