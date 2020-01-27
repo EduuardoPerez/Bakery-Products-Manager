@@ -11,19 +11,14 @@
       "id": 4
     },
     {
+      "id": 5,
       "nombre": "Pastel de Chocolate",
-      "precio": "60",
-      "id": 5
+      "precio": "60"
     },
     {
+      "id": 6,
       "nombre": "Pastel de Fresa",
-      "precio": "40",
-      "id": 6
-    },
-    {
-      "nombre": "Pastel de fresa",
-      "precio": "150",
-      "id": 7
+      "precio": "40"
     },
     {
       "nombre": "Roles de canela",
@@ -34,6 +29,11 @@
       "nombre": "Torta tres leches",
       "precio": "20",
       "id": 9
+    },
+    {
+      "id": 10,
+      "nombre": "Pastel de avellanas",
+      "precio": "150"
     }
   ]
 }

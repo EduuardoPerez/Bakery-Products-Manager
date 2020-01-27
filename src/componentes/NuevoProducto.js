@@ -6,8 +6,8 @@ import { agregarProducto } from '../actions/productosActions';
 
 class NuevoProducto extends Component {
   state = {
-    nombre: "",
-    precio: "",
+    nombre: '',
+    precio: '',
     error: false
   };
 
@@ -20,9 +20,10 @@ class NuevoProducto extends Component {
   };
 
   nuevoProducto = e => {
-    e.preventDefault();
 
+    e.preventDefault();
     const { nombre, precio } = this.state;
+
     if (nombre === "" || precio === "") {
       this.setState({ error: true });
       return;
@@ -31,8 +32,8 @@ class NuevoProducto extends Component {
 
     // Create object
     const infoProducto = {
-      nombre: this.state.nombre,
-      precio: this.state.precio
+      nombre,
+      precio
     }
 
     // Create new product
