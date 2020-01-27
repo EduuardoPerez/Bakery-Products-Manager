@@ -1,4 +1,4 @@
-import { MOSTRAR_PRODUCTOS } from './types';
+import { MOSTRAR_PRODUCTOS, ELIMINAR_PRODUCTO } from './types';
 import axios from 'axios';
 
 //  When working with APIs and reducers it's in the actions where the API call is made
@@ -8,5 +8,13 @@ export const mostrarProductos = () =>  async (dispatch) => {
   dispatch({
     type: MOSTRAR_PRODUCTOS,
     payload: respuesta.data
+  })
+}
+
+export const borrarProducto = id => async (dispatch) => {
+  await axios.delete(`http://192.168.0.55:5000/productos/${id}`);
+  dispatch({
+    type: ELIMINAR_PRODUCTO,
+    payload: id
   })
 }

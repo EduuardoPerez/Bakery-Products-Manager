@@ -11,11 +11,6 @@
       "precio": 60
     },
     {
-      "id": 3,
-      "nombre": "Pastel 4",
-      "precio": 30
-    },
-    {
       "nombre": "Pastel de Zanahoria",
       "precio": "45",
       "id": 4

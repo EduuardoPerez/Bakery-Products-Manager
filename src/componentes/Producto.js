@@ -1,8 +1,17 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+// Redux
+import { connect } from 'react-redux'
+import { borrarProducto } from '../actions/productosActions'
 
 class Producto extends Component {
-  state = {  }
+
+  eliminarProducto = () => {
+    const {id} = this.props.info
+    this.props.borrarProducto(id);
+  }
+
   render() {
 
     const { id, nombre, precio } = this.props.info;
@@ -20,7 +29,7 @@ class Producto extends Component {
           </div>
           <div className="col-md-4 d-flex justify-content-end acciones">
             <Link to={`productos/editar/${id}`} className="btn btn-primary mr-2">Editar</Link>
-            <button type="button" className="btn btn-danger">Borrar</button>
+            <button onClick={this.eliminarProducto} type="button" className="btn btn-danger">Borrar</button>
           </div>
         </div>
       </li>
@@ -28,4 +37,4 @@ class Producto extends Component {
   }
 }
 
-export default Producto;
+export default connect(null, {borrarProducto})(Producto);
